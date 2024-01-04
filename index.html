@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title></title>
+</head>
+<body>
+    <div class="head">
+        <h1>My Task Manager</h1>
+    </div>
+
+    <div class="layer-container">
+        <form>
+            <label for="title">Title:</label> <br>
+            <input type="text" id="title" placeholder=""> <br>
+
+            <label for="description">Description:</label> <br>
+            <textarea id="description" placeholder=""></textarea> <br>
+
+            <label for="date">Due Date:</label><br>
+            <input type="date" id="date" placeholder=""> <br>
+
+            <label for="priority">Priority:</label><br>
+            <select id="priority" name="priority">
+                <option value="low">Low</option>
+                <option value="medium">Medium</option>
+                <option value="high">High</option>
+            </select> <br>
+
+            <button>Add Task</button>
+        </form>
+    </div>
+
+    <div class="footer">
+        <p>@ 2023 Pixel Pusher</p>
+    </div>
+</body>
+
+</html>
