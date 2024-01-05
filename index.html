@@ -4,9 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <script src="custom.js"></script>
-    <title></title>
+   
+    <title>Task Manager</title>
 </head>
 <body>
     <div class="head">
@@ -30,14 +29,21 @@
                 <option value="medium">Medium</option>
                 <option value="high">High</option>
             </select> <br>
-
-            <button>Add Task</button>
+            
+            <button onclick="taskList()">Add Task</button>
         </form>
     </div>
 
     <div class="footer">
         <p>@ 2023 Pixel Pusher</p>
     </div>
+
+    <script>
+        function redirectToTaskList() {
+            window.location.href = 'tasklist.html';
+        }
+    </script>
+
 </body>
 
 </html>
