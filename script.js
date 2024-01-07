@@ -43,7 +43,7 @@ function renderTask(task) {
         <p>${task.priority}</p>
         <button class="editButton" onclick="editTask('${task.title}')">Edit</button>
         <button class="deleteButton" onclick="deleteTask('${task.title}')">Delete</button>
-        <button class="completeButton" onclick="markAsCompleted('${task.title}')">${task.completed ? 'Reopen' : 'Complete'}</button>
+        <button class="completeButton" onclick="markAsCompleted('${task.title}')">${task.completed ? 'Complete' : 'Complete'}</button>
     `;
 
     document.getElementById('task-list').appendChild(listItem);
