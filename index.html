@@ -4,46 +4,63 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-   
-    <title>Task Manager</title>
+    <title>Personalized Task Manager</title>
 </head>
 <body>
-    <div class="head">
-        <h1>My Task Manager</h1>
-    </div>
+    <div class="container">
+        <header>
+            <h1 id="app-name">My Task Manager</h1>
+        </header>
+       
+        <div id="task-form-container">
+            <h2 id="app-name">Add New Task</h2>
+            <form id="task-form">
+                <label for="title">Title:</label>
+                <input type="text" id="title" required>
 
-    <div class="layer-container">
-        <form>
-            <label for="title">Title:</label> <br>
-            <input type="text" id="title" placeholder=""> <br>
+                <label for="description">Description:</label>
+                <textarea id="description"></textarea>
 
-            <label for="description">Description:</label> <br>
-            <textarea id="description" placeholder=""></textarea> <br>
+                <label for="due-date">Due Date:</label>
+                <input type="date" id="due-date" required>
 
-            <label for="date">Due Date:</label><br>
-            <input type="date" id="date" placeholder=""> <br>
+                <label for="priority">Priority:</label>
+                <select id="priority">
+                    <option value="low">Low</option>
+                    <option value="medium">Medium</option>
+                    <option value="high">High</option>
+                </select>
 
-            <label for="priority">Priority:</label><br>
-            <select id="priority" name="priority">
+                <button class="addButton" type="button" onclick="addTask()">Add Task</button>
+            </form>
+        </div>
+        <h2 id="app-name">Your Task List</h2>
+        <div id="filter-container">
+            
+            <label for="filter-status">Filter by Status:</label>
+            <select id="filter-status" onchange="filterTasks()">
+                <option value="all">All</option>
+                <option value="completed">Completed</option>
+                <option value="pending">Pending</option>
+            </select>
+
+            <label for="filter-priority">Filter by Priority:</label>
+            <select id="filter-priority" onchange="filterTasks()">
+                <option value="all">All</option>
                 <option value="low">Low</option>
                 <option value="medium">Medium</option>
                 <option value="high">High</option>
-            </select> <br>
-            
-            <button onclick="taskList()">Add Task</button>
-        </form>
+            </select>
+        </div>
+        <div id="task-list-container">
+            <ul id="task-list"></ul>
+        </div>
+        <footer>
+            <p><a href="about.html">2024 Pixel Pusher</a></p>
+        </footer>
     </div>
-
-    <div class="footer">
-        <p>@ 2023 Pixel Pusher</p>
-    </div>
-
-    <script>
-        function redirectToTaskList() {
-            window.location.href = 'tasklist.html';
-        }
-    </script>
-
+   
+    
+    <script src="script.js"></script>
 </body>
-
 </html>
