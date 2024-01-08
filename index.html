@@ -1,17 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <title>Task Manager</title>
 </head>
+
 <body>
     <div class="container">
         <header>
-            <h1 id="app-name">My Task Manager</h1>
+            <h1 id="app-name" contenteditable="true">My Task Manager</h1>
         </header>
-       
+
         <div id="task-form-container">
             <h2 id="app-name">Add New Task</h2>
             <form id="task-form">
@@ -32,11 +34,36 @@
                 </select>
 
                 <button class="addButton" type="button" onclick="addTask()">Add Task</button>
+
+                <button class="customButton" type="button" onclick="toggleCustomizeModal()">Custom Task Manager</button>
             </form>
+
+            <aside id="customization" class="hidden">
+                <h2>Customize Task Manager</h2>
+                <label for="header-color">Header Color:</label>
+                <input type="color" id="header-color">
+                <br>
+                <label for="container-color">Container Color:</label>
+                <input type="color" id="container-color">
+                <br>
+                <label for="footer-color">Footer Color:</label>
+                <input type="color" id="footer-color">
+                <br>
+                <label for="add-button-color">Add Task Button Color:</label>
+                <input type="color" id="add-button-color">
+                <br>
+                <label for="custom-button-color">Custom Task Manager Button Color:</label>
+                <input type="color" id="custom-button-color">
+                
+                <button class="applyButton" type="button" onclick="applyCustomization()">Apply</button>
+                
+                    
+                <!-- Customization form will be dynamically created using JavaScript -->
+              
+            </aside>
         </div>
         <h2 id="app-name">Your Task List</h2>
         <div id="filter-container">
-            
             <label for="filter-status">Filter by Status:</label>
             <select id="filter-status" onchange="filterTasks()">
                 <option value="all">All</option>
@@ -59,8 +86,8 @@
             <p><a href="about.html">2024 Pixel Pusher</a></p>
         </footer>
     </div>
-   
-    
+
     <script src="script.js"></script>
 </body>
+
 </html>

@@ -110,6 +110,30 @@ function filterTasks() {
     updateTaskList(filteredTasks);
 }
 
+// Customization functions
+function toggleCustomizeModal() {
+    document.getElementById('customization').classList.toggle('hidden');
+}
+
+// Function to apply customization
+function applyCustomization() {
+    const headerColor = document.getElementById('header-color').value;
+    const containerColor = document.getElementById('container-color').value;
+    const footerColor = document.getElementById('footer-color').value;
+    const addButtonColor = document.getElementById('add-button-color').value;
+    const customButtonColor = document.getElementById('custom-button-color').value;
+
+    // Apply customization
+
+    document.querySelector('header').style.backgroundColor = headerColor || '#3498db';
+    document.querySelector('.container').style.backgroundColor = containerColor || '#ffffff';
+    document.querySelector('footer').style.backgroundColor = footerColor || '#2c3e50';
+    document.querySelector('.addButton').style.backgroundColor = addButtonColor || '#3498db';
+    document.querySelector('.customButton').style.backgroundColor = customButtonColor || '#e74c3c';
+
+    // Close the customization modal after applying
+    toggleCustomizeModal();
+}
+
 // Sample usage
 updateTaskList();
-
