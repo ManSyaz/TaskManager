@@ -38,9 +38,9 @@ function renderTask(task) {
     listItem.className = task.completed ? 'completed-task' : '';
     listItem.innerHTML = `
         <h3>${task.title}</h3>
-        <p>${task.description}</p>
-        <p>${task.dueDate}</p>
-        <p>${task.priority}</p>
+        <p>Description: ${task.description}</p>
+        <p>Due Date: ${task.dueDate}</p>
+        <p>Priority: ${task.priority}</p>
         <button class="editButton" onclick="editTask('${task.title}')">Edit</button>
         <button class="deleteButton" onclick="deleteTask('${task.title}')">Delete</button>
         <button class="completeButton" onclick="markAsCompleted('${task.title}')">${task.completed ? 'Complete' : 'Complete'}</button>
@@ -49,17 +49,41 @@ function renderTask(task) {
     document.getElementById('task-list').appendChild(listItem);
 }
 
-// Function to edit an existing task
-function editTask(title) {
-    const newTitle = prompt('Enter a new title for the task:');
-    if (newTitle === null) {
-        return; // User clicked Cancel
-    }
-
+// Function to edit task details
+function editTaskDetails(title, field) {
     const taskIndex = findTaskIndex(title);
     if (taskIndex !== -1) {
-        tasks[taskIndex].title = newTitle;
-        updateTaskList();
+        let newValue;
+        if (field === 'dueDate') {
+            // Use date input for editing due date
+            newValue = prompt(`Enter a new ${field} for the task:`, tasks[taskIndex][field]);
+        } else {
+            // Use generic prompt for other fields
+            newValue = prompt(`Enter a new ${field} for the task:`, tasks[taskIndex][field]);
+        }
+
+        if (newValue !== null) {
+            tasks[taskIndex][field] = newValue;
+            updateTaskList();
+        }
+    }
+}
+
+// Function to edit task details dynamically
+function editTask(title) {
+    const taskIndex = findTaskIndex(title);
+    if (taskIndex !== -1) {
+        const fieldToEdit = prompt(`Select a field to edit (description, dueDate, priority):`);
+        if (fieldToEdit === null) {
+            return; // User clicked Cancel
+        }
+
+        // Validate the input field
+        if (['description', 'dueDate', 'priority'].includes(fieldToEdit)) {
+            editTaskDetails(title, fieldToEdit);
+        } else {
+            alert('Invalid field selected. Please choose description, dueDate, or priority.');
+        }
     }
 }
 
