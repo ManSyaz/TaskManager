@@ -178,6 +178,7 @@ li {
     border: 5px solid #bb6718;
     margin: 10px;
     padding: 10px;
+    list-style: none;
 }
 
 .completed-task {
