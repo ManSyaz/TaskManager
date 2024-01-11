@@ -141,6 +141,18 @@ input[type=color] {
     margin-right: auto;
 }
 
+.addButton,
+.customButton,
+.editButton,
+.deleteButton,
+.completeButton {
+    border: 2px solid #333;
+    padding: 8px 16px;
+    margin-right: 8px;
+    cursor: pointer;
+    color: #ffffff;
+}
+
 footer {
     background-color: #bb6718;
     color: white;
@@ -177,7 +189,6 @@ li {
     margin: 0 auto;
     margin-top: 2%;
     color: black;
-    display: grid;
     grid-template-columns: 1fr 3fr;
     gap: 10px;
 }
@@ -215,16 +226,4 @@ li {
 .applyButton {
     background-color: #3498db;
     color: #fff;
-}
-
-.addButton,
-.customButton,
-.editButton,
-.deleteButton,
-.completeButton {
-    border: none;
-    padding: 8px 16px;
-    margin-right: 8px;
-    cursor: pointer;
-    color: #ffffff;
 }

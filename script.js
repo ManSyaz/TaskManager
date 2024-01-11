@@ -169,6 +169,7 @@ function applyCustomization() {
     document.getElementById('filter-status').style.color = textColor;
     document.getElementById('filter-priority').style.color = textColor;
     document.getElementById('task-list-container').style.color = textColor;
+    document.getElementById('.app-name').style.color = textColor;
 
     //close the customization modal after applying
     toggleCustomizeModal();
