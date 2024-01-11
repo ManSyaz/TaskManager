@@ -200,13 +200,31 @@ li {
     background-color: #ecf0f1;
     padding: 20px;
     margin-top: 20px;
+    text-align: center;
 }
 
 #customization h2 {
     margin-bottom: 10px;
 }
 
+#customization label {
+    display: inline-block; /* Display labels and inputs on the same line */
+    margin: 10px 20px; /* Adjust margin for spacing */
+}
+
 .applyButton {
     background-color: #3498db;
     color: #fff;
+}
+
+.addButton,
+.customButton,
+.editButton,
+.deleteButton,
+.completeButton {
+    border: none;
+    padding: 8px 16px;
+    margin-right: 8px;
+    cursor: pointer;
+    color: #ffffff;
 }
