@@ -3,29 +3,41 @@
 
 <head>
     <meta charset="UTF-8">
+    <!--ensure that web pages are displayed properly across a variety of devices and screen-->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--to connect with elements from style.css-->
     <link rel="stylesheet" href="style.css">
     <title>Task Manager</title>
 </head>
 
 <body>
     <div class="container">
+        <!--task manager header-->
         <header>
+            <!--task manager title, can be edit by clicking-->
             <h1 id="app-name" contenteditable="true">My Task Manager</h1>
         </header>
 
         <div id="task-form-container">
+            <!--task from title-->
             <h2 id="app-name">Add New Task</h2>
+
+            <!--form section, it have title, description, due date, and priority (low, medium, high)-->
             <form id="task-form">
+
+                <!--user input title-->
                 <label for="title">Title:</label>
                 <input type="text" id="title" required>
 
+                <!--user input description-->
                 <label for="description">Description:</label>
                 <textarea id="description"></textarea>
 
+                <!--user input due date-->
                 <label for="due-date">Due Date:</label>
                 <input type="date" id="due-date" required>
 
+                <!--user input priority based on low, medium ,high-->
                 <label for="priority">Priority:</label>
                 <select id="priority">
                     <option value="low">Low</option>
@@ -33,45 +45,61 @@
                     <option value="high">High</option>
                 </select>
 
+                <!--Add Task button, user can click the button after fill all the details-->
                 <button class="addButton" type="button" onclick="addTask()">Add Task</button>
 
+                <!--Customize button, user can customize color needed-->
                 <button class="customButton" type="button" onclick="toggleCustomizeModal()">Customize</button>
             </form>
 
+            <!--Customize section, it will appear if user click customize button. It also closed when
+            user click customize button again-->
             <aside id="customization" class="hidden">
                 <h2>Customize Task Manager</h2>
+
+                <!--to change header color-->
                 <label for="header-color">Header Color:</label>
                 <br>
                 <input type="color" id="header-color">
                 <br>
-            
+                
+                <!--to change container color-->
                 <label for="container-color">Container Color:</label>
                 <br>
                 <input type="color" id="container-color">
                 <br>
             
+                <!--to change footer color-->
                 <label for="footer-color">Footer Color:</label>
                 <br>
                 <input type="color" id="footer-color">
                 <br>
-            
+                
+                <!--to change all button color-->
                 <label for="button-color">Button Color:</label>
                 <br>
                 <input type="color" id="button-color">
                 <br>
-            
+                
+                <!--to change all text in task manager color-->
                 <label for="text-color">Text Color:</label>
                 <br>
                 <input type="color" id="text-color">
                 <br>
-            
+                
+                <!--this apply button will change the color based on what color user choose-->
                 <button class="applyButton" type="button" onclick="applyCustomization()">Apply to All</button>
             </aside>
 
         </div>
         
+        <!--filter and list task section-->
         <div id="filter-container">
+            <!--list task title-->
             <h2 class="app-name">Your Task List</h2><br>
+
+            <!--in here user can filter status. it can filter based on all task, completed task or
+            pending task-->
             <label for="filter-status">Filter by Status:</label>
             <select id="filter-status" onchange="filterTasks()">
                 <option value="all">All</option>
@@ -79,6 +107,8 @@
                 <option value="pending">Pending</option>
             </select>
 
+            <!--in here user can filter priority level. it can filter based on all task, low task
+                medium task, or high task-->
             <label for="filter-priority">Filter by Priority:</label>
             <select id="filter-priority" onchange="filterTasks()">
                 <option value="all">All</option>
@@ -87,14 +117,23 @@
                 <option value="high">High</option>
             </select>
         </div>
+
+        <!--task list container. User's task will appear in this section-->
         <div id="task-list-container">
+
+            <!--in here user can edit title, description, due date, or priority. user also can delete or
+            mark complete the task. the task will turn green when mark completed-->
             <ol id="task-list"></ol>
         </div>
+
+        <!--task manager footer-->
         <footer>
+            <!--user can click 2024 Pixel Pusher to go to about page-->
             <p><a href="about.html">2024 Pixel Pusher</a></p>
         </footer>
     </div>
 
+    <!--task manager functional using javascript-->
     <script src="script.js"></script>
 </body>
 

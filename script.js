@@ -32,7 +32,7 @@ function clearForm() {
     document.getElementById('task-form').reset();
 }
 
-//Function to render a task
+//Function to show task added after user add task
 function renderTask(task) {
     const listItem = document.createElement('li');
     listItem.className = task.completed ? 'completed-task' : '';
@@ -55,10 +55,10 @@ function editTaskDetails(title, field) {
     if (taskIndex !== -1) {
         let newValue;
         if (field === 'dueDate') {
-            // Use date input for editing due date
+            // use date input for editing due date
             newValue = prompt(`Enter a new ${field} for the task:`, tasks[taskIndex][field]);
         } else {
-            // Use generic prompt for other fields
+            // use generic prompt for other fields
             newValue = prompt(`Enter a new ${field} for the task:`, tasks[taskIndex][field]);
         }
 
@@ -75,7 +75,7 @@ function editTask(title) {
     if (taskIndex !== -1) {
         const fieldToEdit = prompt(`Select a field to edit (Title, Description, DueDate, Priority):`);
         if (fieldToEdit === null) {
-            return; // User clicked Cancel
+            return; // user clicked Cancel
         }
 
         // Validate the input field
