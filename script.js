@@ -101,7 +101,7 @@ function editTask(title)
     const taskIndex = findTaskIndex(title);
     if (taskIndex !== -1) 
     {
-        const fieldToEdit = prompt(`Select a field to edit (Title, Description, DueDate, Priority):`);
+        const fieldToEdit = prompt(`Select a field to edit (title, description, dueDate, priority):`);
         if (fieldToEdit === null) 
         {
             return; //user clicked cancel
@@ -114,7 +114,7 @@ function editTask(title)
         } 
         else 
         {
-            alert('Invalid field selected. Please choose description, dueDate, or priority.');
+            alert('Invalid field selected. Please choose title, description, dueDate, or priority.');
         }
     }
 }
